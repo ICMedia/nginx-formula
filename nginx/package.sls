@@ -36,7 +36,7 @@ nginx-old-init-disable:
       - file: nginx-old-init
 {% endif %}
 
-{% if salt['grains.get']('os_family') == 'Debian' %}
+{% if salt['grains.get']('os') == 'Ubuntu' %}
 nginx-ppa-repo:
   pkgrepo.managed:
     - enabled: {{ salt['pillar.get']('nginx:install_from_ppa', False) }}
