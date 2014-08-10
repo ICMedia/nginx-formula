@@ -17,6 +17,7 @@ get-openresty:
     - name: tar -zxf {{ openresty_package }} -C {{ home }}
     - watch:
       - file: get-openresty
+      - file: {{ home }}
 
 install_openresty:
   cmd.wait:
